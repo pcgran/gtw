@@ -1,0 +1,34 @@
+.red {
+	color: red;
+}
+
+.form-input {
+	width: 50%;
+	display: inline;
+}
+
+.form-button {
+	width: 10%;
+}
+
+.header-container {
+	background-color: #5cb85c;
+	margin-bottom: 20px;
+}
+
+.header-navigation {
+	padding-botton: 10px;
+}
+
+.profile-img {
+	width: 64px;
+	height: 64px;
+}
+
+.dark {
+	background-color: #222;
+}
+
+.main-header {
+	margin-bottom: 0px;
+}
