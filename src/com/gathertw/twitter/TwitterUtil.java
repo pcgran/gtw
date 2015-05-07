@@ -14,6 +14,9 @@ public class TwitterUtil {
 	
 	private ConfigurationBuilder cb;
 	
+	/**
+	 * Constructor. Sets the parameters of the Twitter application in order to use it right after its creation.
+	 */
 	public TwitterUtil(){
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 	    cb.setDebugEnabled(true)
@@ -24,6 +27,9 @@ public class TwitterUtil {
 	    this.cb = cb;
 	}
 	
+	/**
+	 * Returns a list of tweets that contain the keyword.
+	 */
 	public List<Status> getTweetsFromKeyWord(String keyword){
 		TwitterFactory tf = new TwitterFactory(cb.build());
 	    Twitter twitter = tf.getInstance();
