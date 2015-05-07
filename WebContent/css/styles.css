@@ -32,3 +32,21 @@
 .main-header {
 	margin-bottom: 0px;
 }
+
+.form-row {
+	margin-bottom: 10px;
+}
+
+.checkcolumn {
+	float: left;
+	margin-right: 10px;
+}
+
+.firstcolumn {
+	width: 15%;
+	float: left;
+}
+
+.secondcolumn {
+	width: 70%;
+}

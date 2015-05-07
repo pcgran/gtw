@@ -6,34 +6,42 @@
 		<form role="form" action="processSearch">
 			<div class="form-group">
 				<div class="form-row">
-					<input type="checkbox" name="option1" value="option1"/>
-					Key words <input type="text" class="form-control form-input" placeholder="Search Twitter..." name="q" />
+					<div class="checkcolumn"><input type="checkbox" name="option1" value="option1"/></div>
+					<div class="firstcolumn">Key words</div> 
+					<div class="secondcolumn"><input type="text" class="form-control form-input" placeholder="Search Twitter..." name="q" /></div>
 				</div>
 				<div class="form-row">	
-					<input type="checkbox" name="option1" value="option1"/>
-					Language
-					<select>
-						<option>en</option>
-					</select>
+					<div class="checkcolumn"><input type="checkbox" name="option1" value="option1"/></div>
+					<div class="firstcolumn">Language</div>
+					<div class="secondcolumn">
+						<select>
+							<option>en</option>
+						</select>
+					</div>
 				</div>
 				<div class="form-row">	
-					<input type="checkbox" name="option1" value="option1"/>
-					Region
-					<select>
-						<option>es</option>
-					</select>
+					<div class="checkcolumn"><input type="checkbox" name="option1" value="option1"/></div>
+					<div class="firstcolumn">Region</div>
+					<div class="secondcolumn">
+						<select>
+							<option>es</option>
+						</select>
+					</div>
 				</div>
 				<div class="form-row">	
-					<input type="checkbox" name="option1" value="option1"/>
-					Mood
-					<select>
-						<option>:)</option>
-						<option>:(</option>
-					</select>
+					<div class="checkcolumn"><input type="checkbox" name="option1" value="option1"/></div>
+					<div class="firstcolumn">Mood</div>
+					<div class="secondcolumn">
+						<select>
+							<option>:)</option>
+							<option>:(</option>
+						</select>
+					</div>
 				</div>
 				<div class="form-row">	
-					<input type="checkbox" name="option1" value="option1"/>
-					Number of results <input type="text" class="form-control form-input" name="number-results" />
+					<div class="checkcolumn"><input type="checkbox" name="option1" value="option1"/></div>
+					<div class="firstcolumn">Number of results</div>
+					<div class="secondcolumn"><input type="text" class="form-control form-input" name="number-results" /></div>
 				</div>
 				<button type="submit" class="btn btn-success form-button">Search</button>
 			</div>
