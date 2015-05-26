@@ -25,9 +25,12 @@ public class SearchController {
 		String q = request.getParameter("q");
 		
 		TwitterUtil twitter = new TwitterUtil();
-		List<Status> results = twitter.getTweetsFromKeyWord(q);
 		
-		twitter.storeTweetsFromStream();
+		twitter.storeTweetsFromStream(q);
+		
+		//twitter.saveTweetsToFile();
+		
+		List<Status> results = twitter.getTweetList();
 		
 		ModelAndView mav = new ModelAndView("results");
 		
