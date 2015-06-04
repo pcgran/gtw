@@ -2,15 +2,19 @@
 <html lang="en">
 
 <head>
-<meta name="author" content="">
-
-<title>Basic Spring project</title>
-
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- My own styles -->
-<link href="css/styles.css" rel="stylesheet">
+	<meta name="author" content="">
+	
+	<title>Basic Spring project</title>
+	
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- My own styles -->
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
 
 </head>
 <body>
@@ -38,6 +42,6 @@
 	<div tabindex="-1" id="content" class="header-container">
 		<div class="container">
 			<h1>SEARCH</h1>
-			<p>Look for tweets base on different parameters</p>
+			<p>Look for tweets based on different parameters</p>
 		</div>
 	</div>
