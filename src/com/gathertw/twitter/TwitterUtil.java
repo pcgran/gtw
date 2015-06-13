@@ -88,7 +88,7 @@ public class TwitterUtil {
 	/**
 	 * Takes the tweets from a stream and stores it on a json file.
 	 */
-	public void storeTweetsFromStream(String q) {
+	public void storeTweetsFromStream(String q, String lang) {
 		
 		StatusListener listener = new StatusListener() {
 			
@@ -124,9 +124,13 @@ public class TwitterUtil {
 
 		FilterQuery query = new FilterQuery();
 		String[] keywords = { q };
+		String[] languages = { lang };
 
 		query.track(keywords);
+		query.language(languages);
+		
 		twitterStream.filter(query);
+		
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {

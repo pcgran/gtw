@@ -23,10 +23,11 @@ public class SearchController {
 	public ModelAndView generateResults(HttpServletRequest request, HttpServletResponse response) {
 	 
 		String q = request.getParameter("q");
+		String lang = request.getParameter("lang");
 		
 		TwitterUtil twitter = new TwitterUtil();
 		
-		twitter.storeTweetsFromStream(q);
+		twitter.storeTweetsFromStream(q, lang);
 		
 		//twitter.saveTweetsToFile();
 		
