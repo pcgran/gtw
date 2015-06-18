@@ -125,11 +125,26 @@ public class TwitterUtil {
 		FilterQuery query = new FilterQuery();
 		String[] keywords = { q };
 		String[] languages = { lang };
-
-		query.track(keywords);
-		query.language(languages);
 		
-		twitterStream.filter(query);
+		if(q != null){			
+			query.track(keywords);
+		}
+		
+		if(lang != null){					
+			query.language(languages);
+		}		
+		
+		//if we don't have keywords, we do a sample search
+		if(q == null){
+			if(lang != null){
+				twitterStream.sample(lang);
+			} else {
+				twitterStream.sample();
+			}
+		} else {
+			twitterStream.filter(query);
+		}
+		
 		
 		try {
 			Thread.sleep(5000);
