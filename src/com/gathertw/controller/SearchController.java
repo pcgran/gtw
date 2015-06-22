@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import twitter4j.Status;
 
+import com.gathertw.common.Constants;
 import com.gathertw.twitter.TwitterUtil;
 
 @Controller
@@ -24,10 +25,18 @@ public class SearchController {
 	 
 		String q = request.getParameter("q");
 		String lang = request.getParameter("lang");
+		String numResultsString = request.getParameter("number-results");
+		
+		//Default tweet count
+		int numResults = Constants.DEFAULT_NUMBER_RESULTS;
+		
+		if(numResultsString != null){
+			numResults = Integer.parseInt(numResultsString);
+		}
 		
 		TwitterUtil twitter = new TwitterUtil();
 		
-		twitter.storeTweetsFromStream(q, lang);
+		twitter.storeTweetsFromStream(q, lang, numResults);
 		
 		//twitter.saveTweetsToFile();
 		

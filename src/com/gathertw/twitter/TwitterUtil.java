@@ -88,33 +88,29 @@ public class TwitterUtil {
 	/**
 	 * Takes the tweets from a stream and stores it on a json file.
 	 */
-	public void storeTweetsFromStream(String q, String lang) {
+	public void storeTweetsFromStream(String q, String lang, int numResults) {
 		
 		StatusListener listener = new StatusListener() {
 			
 			// this method is called every time a tweet comes in.
 			public void onStatus(Status status) {
 				System.out.println(status.getUser().getName() + " : " + status.getText());
-				tweetList.add(status);
+				if(tweetList.size() < numResults){
+					tweetList.add(status);
+				}
+				
 				// tweetFile.write(DataObjectFactory.getRawJSON(status).getBytes());
 			}
 
-			public void onDeletionNotice(
-					StatusDeletionNotice statusDeletionNotice) {
-			}
+			public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {}
 
-			public void onTrackLimitationNotice(int numberOfLimitedStatuses) {
-			}
+			public void onTrackLimitationNotice(int numberOfLimitedStatuses) {}
 
-			public void onException(Exception ex) {
-				ex.printStackTrace();
-			}
+			public void onException(Exception ex) {ex.printStackTrace();}
 
-			public void onScrubGeo(long arg0, long arg1) {
-			}
+			public void onScrubGeo(long arg0, long arg1) {}
 
-			public void onStallWarning(StallWarning arg0) {
-			}
+			public void onStallWarning(StallWarning arg0) {}
 		};
 
 		TwitterStreamFactory tsf = new TwitterStreamFactory(streamConfiguration.build());
@@ -145,9 +141,10 @@ public class TwitterUtil {
 			twitterStream.filter(query);
 		}
 		
-		
+		//keep the stream open until we get the desired number of tweets
 		try {
-			Thread.sleep(5000);
+			while(tweetList.size() < numResults)
+				Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

@@ -8,4 +8,7 @@ public final class Constants {
 	public static final String ACCESS_TOKEN = "ACCESS_TOKEN";
 	public static final String ACCESS_TOKEN_SECRET = "ACCESS_TOKEN_SECRET";
 	
+	//Default number of results when no number is specified
+	public static final int DEFAULT_NUMBER_RESULTS = 20;
+	
 }
